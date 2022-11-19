@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4070f4;
+    
+} 
+
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 70%;
+    width: 200%;
+    transition: height 0.2s ease;
+    padding-left: 13px;
+}
+
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+.container1{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    height: 60%;
+    background: #fff;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0px 20px;
+    align-content: center;
+    
+}
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 85%;
+    margin-top: 13px;
+    left: 25px;  
+    
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    
+}
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #4070f4;
+    
+}
+/* this is for emojies */
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :valid) ~ i{
+    color: #4070f4;    
+}
+
+
+.input-field i.icon{
+    left: 0px;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-content{
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox-content input{
+    margin: 0 8px -2px 4px;
+    accent-color: #6140f4;
+    width: 30px;
+    
+    
+}
+/* down of submit */
+.form .text{
+    color: #333;
+    font-size: 14px;
+    margin-top: -7px;   
+}
+.form a.text{
+    color: #4070f4;
+    text-decoration: none;
+    
+    
+}
+.form a:hover{
+    text-decoration: underline;
+    
+}
+/* for submit button */
+.form .button{
+    margin-top: 35px;
+    
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.button input:hover{
+    background-color: #265df2;
+}
+
+.form .login-signup{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.tittle1{
+    padding-top: 25px;
+    font-size: x-large;
+    padding-left: 15px;   
+    width: 374px;
+}
+u{
+    text-decoration-line: downline;
+    text-decoration-color: blue;
+    font-size: 2rem;
+}
+.form{
+    padding-bottom: 15px;
+}
+form{
+    padding: 15px;
+}

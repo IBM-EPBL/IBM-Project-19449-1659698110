@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Inventory Management System for Retailers</title>
+    <link rel="stylesheet" href="./static/css/dashboard.css">
+    <!-- fontawesome for icons -->
+    <script src="https://kit.fontawesome.com/a50c5d99bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a href="">
+                    <span class="icon"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="title">Shop Name</span>
+                </a></li>
+                <li><a href="/dashboard">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Dashboard</span>
+                </a></li>
+                <li><a href="/stocks">
+                    <span class="icon"><i class="fa-solid fa-basket-shopping"></i></span>
+                    <span class="title">Stocks</span>
+                </a></li>
+                <li><a href="/sales">
+                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="title">Sales</span>
+                </a></li>
+                <li><a href="/warehouse">
+                    <span class="icon"><i class="fa-solid fa-store"></i></span>
+                    <span class="title">Warehouse</span>
+                </a></li>
+                <li><a href="/payments">
+                    <span class="icon"><i class="fa-regular fa-credit-card"></i></span>
+                    <span class="title">Payments</span>
+                </a></li>
+                <li><a href="/purchases">
+                    <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span class="title">Purchases</span>
+                </a></li>
+                <li><a href="/settings">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="title">Settings</span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="searchbar">
+                    <label>
+                        <input type="text" name="search" placeholder="Search here">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+                <div class="usericon">
+                    <img src="./static/img/avathar.png" alt="userimg">
+                </div>
+            </div>
+            <div class="mainContent">
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="cardValue">{{details.totalStock }}</div>
+                            <div class="cardName">Total Stocks</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardValue">{{ details.currentInventoryStock }}</div>
+                            <div class="cardName">Current Inventory Stocks</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardValue">{{ details.lowStocks }}</div>
+                            <div class="cardName">Low Stocks</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardValue">{{ details.nonMovableStocks }}</div>
+                            <div class="cardName">Warehouses</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- billing details -->
+                <div class="billingDetails"><!--   details -->
+                    <div class="recentBills"><!-- recentor-->
+                        <div class="cardHeader">
+                            <h2>Recent Bills</h2>
+                            <a href="/viewbills" class="btn">View All</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Bill Id</td>
+                                    <td>Customer Name</td>
+                                    <td>Price</td>
+                                    <td>Payment Mode</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sale in sales%}
+                                <tr>
+                                    <td>{{ sale[0] }}</td>
+                                    <td>{{ sale[1] }}</td>
+                                    <td>{{ sale[2] }}</td>
+                                    <td>{{ sale[3] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- inventorySummary -->
+
+                    <div class="secondGrid">
+                        <div class="inventorySummary">
+                            <div class="cardHeader">
+                                <h2>Inventory Summary</h2>
+                            </div>
+    
+                            <table>
+                                <tr>
+                                    <td>Stocks In Hand</td>
+                                    <td><h4>{{ details.totalQuantitystock }}</h4></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Stocks Ordered</td>
+                                    <td><h4>2800</h4></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Stocks Received</td>
+                                    <td><h4>2500</h4></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="activeStocks">
+                            <div class="progressBar">
+                                <span class="value">0<p>%</p></span>
+                            </div>
+                            <div class="text">Active Stocks</div>
+                            <input type="hidden" id="activeStocks" value="90">
+                        </div>
+                    </div>
+                </div>
+                <!--end billing details -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./static/js/dashboard.js"></script>
+</body>
+</html>
