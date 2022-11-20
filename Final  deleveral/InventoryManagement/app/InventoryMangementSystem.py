@@ -1,6 +1,3 @@
-from crypt import methods
-import re
-from wsgiref import validate
 from flask import Flask, render_template,redirect,request, session,flash
 import ibm_db
 
@@ -206,7 +203,7 @@ def deleteStocks():
         return redirect("/stocks")
 
 @app.route("/warehouse")
-def inventory():
+def warehouse():
     warehouseDetailsQuery = "SELECT * FROM WAREHOUSEDETAILS"
     warehouseDetail = ibm_db.prepare(conn,warehouseDetailsQuery)
     ibm_db.execute(warehouseDetail)
