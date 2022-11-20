@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root{
+    --lightblue : #4070f431;
+    --blue : #4070f4;
+    --white : #fff;
+    --gray : #f5f5f5;
+    --black1 : #222;
+    --black2 : #999;
+    --progressValue : 50;
+    --yellow : #FF6700;
+    --red : rgb(238, 0, 0);
+}
+.topbar{
+    width: 100%;
+    background-color: var(--blue);
+}
+
+.header{
+    width: 95%;
+    margin: auto;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.header a{
+    text-decoration: none;
+    color: var(--black1);
+    padding: 10px 15px;
+}
+
+.header li{
+    list-style-type: none;   
+}
+
+.title{
+    width: 30%;
+    display: flex;
+}
+
+.header h2{
+    margin: auto;
+}
+
+.buttons{
+    width: 20%;
+}
+
+.navlinks{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navlinks li{
+    transform: translateY(37%);
+}
+
+.navlinks li a{
+    padding: 10px 12px;
+    color: var(--blue);
+    font-size: 16px;
+    background-color: var(--white);
+    height: 50%;
+    transform: translateY(30%);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.navlinks li a:hover{
+    padding: 12px 14px;
+    transition: 0.05s;
+}
+
+.mainbody{
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.maintittle{
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 40px;
+    font-size: 30px;
+    width: 100%;
+}
+
+.maintittle h2{
+    color: var(--blue);
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.maintittle p{
+    width: 65%;
+    color: rgba(0, 0, 0, 0.568);
+}
+
+.maintittle a{
+    text-decoration: none;
+    padding: 10px 12px;
+    color: var(--white);
+    font-size: 16px;
+    background-color: var(--blue);
+    height: 50%;
+    transform: translateY(30%);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.image{
+    right: 0;
+    width: 60%;
+    height: 90%;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+.maintittle a:hover{
+    padding: 12px 14px;
+    transition: 0.03s;
+    background-color: #4070f4d3;
+}
+
+@media (max-width:911px){
+    .title{
+        width: 45%;
+    }
+
+    .buttons{
+        width: 30%;
+    }
+}
+
+@media (max-width:850px){
+    .image{
+        display: none;
+    }
+
+    .maintittle{
+        width: 100%;
+    }
+
+    .maintittle h2{
+        width: 100%;
+    }
+    
+    .maintittle p{
+        width: 85%;
+    }
+
+}
+
+@media (max-width:620px){
+    .title{
+        width: 55%;
+    }
+    .buttons{
+        width: 45%;
+    }
+}
+
+@media (max-width:515px){
+    .header{
+        width: 100%;
+    }
+    .title{
+        width: 55%;
+        font-size: 12px;
+    }
+    .buttons{
+        width: 45%;
+    }
+
+    .maintittle{
+        padding-top: 50px;
+        padding-left: 5px;
+    }
+
+    .navlinks li a{
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

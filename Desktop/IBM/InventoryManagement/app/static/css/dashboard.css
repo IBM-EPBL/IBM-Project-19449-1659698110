@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --lightblue : #4070f4cb;
+    --blue : #4070f4;
+    --white : #fff;
+    --gray : #f5f5f5;
+    --black1 : #222;
+    --black2 : #999;
+    --progressValue : 50;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 70px;
+}
+
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 200%;
+    list-style: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: var(--white);
+}
+/* Access the child property */
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a{
+    position: relative;
+    width: 100%;
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: var(--blue);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i{
+    font-size: 1.2em;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 70px);
+    left: 70px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.searchbar{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.searchbar label{
+    position: relative;
+    width: 100%;
+}
+
+.searchbar label input{
+    width: 80%;
+    height: 35px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 40px;
+    outline: none;
+    border: 2px solid var(--black2);
+}
+
+.searchbar label i{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.3em;
+}
+
+.usericon{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.usericon img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cardBox .card .cardValue{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+    /* text-align: center; */
+    padding-bottom: 10px;
+}
+
+.cardBox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1em;
+}
+
+.cardBox .card:hover{
+    background: var(--blue);
+    transition: 0.5s;
+}
+
+.cardBox .card:hover .cardValue,
+.cardBox .card:hover .cardName
+{
+    color: var(--white);
+}
+
+
+.billingDetails{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+}
+
+.billingDetails .recentBills{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2{
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.billingDetails table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.billingDetails table thead td{
+    font-weight: 600;
+}
+
+.billingDetails .recentBills table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.billingDetails .recentBills table tr:last-child{
+    border-bottom: none;
+}
+
+.billingDetails .recentBills table tbody tr:hover{
+    background: var(--lightblue);
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.billingDetails .recentBills table tr td{
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.secondGrid{
+    position: relative;
+    display: grid;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background: var(--white);
+}
+.secondGrid .inventorySummary table{
+    margin-top: 10px;
+}
+
+.secondGrid .inventorySummary table tr td{
+    padding: 15px 10px;
+}
+
+.secondGrid .inventorySummary table tr td h4{
+    color: var(--blue);
+    font-size: 16px;
+}
+
+.activeStocks{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressBar{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--blue) 70deg,#ededed 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.progressBar::after{
+    position: absolute;
+    content: '';
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.progressBar .value{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--blue);
+    z-index: 9;
+    display: flex;
+}
+
+.activeStocks .text{
+    margin-top: 25px;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+
+/* responsive */
+
+@media(max-width : 1000px) {
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        width: 300px;
+        left: 0;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        left: 300px;
+    }
+}
+
+@media(max-width : 768px){
+    .billingDetails{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .recentBills{
+        overflow-x: auto;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width : 480px){
+    .cardBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2{
+        font-size: 20px;
+    }
+    .usericon{
+        min-width: 40px;
+    }
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        /* width: 50%; */
+        z-index: 10001;
+    }
+    .main.active .toggle{
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/home.css">
+    <title>Home - Inventory Management for Retailers</title>
+</head>
+<body>
+
+    {%if msg%}
+        <script>
+            alert("{{msg}}");
+        </script>
+    {%endif%}
+    <div class="contaner">
+        <!-- topbar -->
+            <div class="topbar">
+                <div class="header">
+                    <div class="title">
+                        <h2>Inventory Management</h2>
+                    </div>
+                    <div class="buttons">
+                        <ul class="navlinks">
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <!-- endoftopbar -->
+
+        <!-- maincontent -->
+
+        <div class="mainbody">
+            <div class="maintittle">
+                <h2>Cloud Inventory Management for Retailers</h2>
+                <br>
+                <p>Powerful operations management solution.
+                    Join the manufacturers and distributors
+                    across the world succeeding with Cloud Inventory.</p>
+                <br>
+                <a href="/register">Register</a>
+            </div>
+            <div class="image">
+                <img src="./static/img/20946011.jpg" alt="Inventory image">
+            </div>
+        </div>
+        <!-- endofmaincontent -->
+    </div>
+
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "5ad37de6-7cb5-45b6-b7d3-c0627f127db3", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "c906d261-8312-4dce-90d0-b5548f2c5658", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+      </script>
+</body>
+</html>

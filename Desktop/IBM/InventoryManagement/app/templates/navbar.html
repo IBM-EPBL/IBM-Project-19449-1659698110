@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{%endblock%}
+    <link rel="stylesheet" href="./static/css/dashboard.css">
+    <!-- fontawesome for icons -->
+    <script src="https://kit.fontawesome.com/a50c5d99bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a href="">
+                    <span class="icon"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="title">Shop Name</span>
+                </a></li>
+                <li><a href="/dashboard">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Dashboard</span>
+                </a></li>
+                <li><a href="/customers">
+                    <span class="icon"><i class="fa-solid fa-users"></i></span>
+                    <span class="title">Customers</span>
+                </a></li>
+                <li><a href="file:///home/balag/Desktop/IBM/InventoryManagement/appHome.html">
+                    <span class="icon"><i class="fa-solid fa-basket-shopping"></i></span>
+                    <span class="title">Stocks</span>
+                </a></li>
+                <li><a href="/saleOrders">
+                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="title">Sales Orders</span>
+                </a></li>
+                <li><a href="file:///home/balag/Desktop/IBM/InventoryManagement/appHome.html">
+                    <span class="icon"><i class="fa-solid fa-store"></i></span>
+                    <span class="title">Vendors</span>
+                </a></li>
+                <li><a href="/payments">
+                    <span class="icon"><i class="fa-regular fa-credit-card"></i></span>
+                    <span class="title">Payments</span>
+                </a></li>
+                <li><a href="/purchases">
+                    <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span class="title">Purchase Order</span>
+                </a></li>
+                <li><a href="/settings">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="title">Settings</span>
+                </a></li>
+                <li><a href="file:///home/balag/Desktop/IBM/InventoryManagement/appHome.html">
+                    <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                    <span class="title">Sign out</span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="searchbar">
+                    <label>
+                        <input type="text" name="search" placeholder="Search here">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+                <div class="usericon">
+                    <img src="./static/img/avathar.png" alt="userimg">
+                </div>
+            </div>
+            <div class="OtherContent">
+                {% block body %} {% endblock%}
+            </div>
+        </div>
+    </div>
+
+    <script src="./static/js/dashboard.js"></script>
+</body>
+</html>
